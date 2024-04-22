@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import RepositoryList from './RepositoryList';
+import RepositoryDetail from './RepositoryDetail';
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <RepositoryList />
+        </Route>
+        <Route path="/repo/:id">
+          <RepositoryDetail />
+        </Route>
+      </Switch>
+    </Router>
+    // src/App.js
+
+import { Button } from '@chakra-ui/react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {Button}
+        <Button colorScheme="blue" size="lg">
+          Click me
+        </Button>
       </header>
     </div>
   );
 }
+
+export default App;
+
+  );
+};
 
 export default App;
